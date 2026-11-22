@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: concept-bridge-handbook
+    runtime: static
+    buildCommand: echo "Static site, nothing to build"
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: no-referrer
